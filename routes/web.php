@@ -22,3 +22,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user', 'UserController@index')->name('user');
 Route::get('/admin', 'AdminController@index')->name('admin');
+
+
+// Route for username
+Route::get('/{username}','HomeController@profile')->name('profile');
+Route::fallback(function(){
+    return 'Hm, why did you land here somehow?';
+});
